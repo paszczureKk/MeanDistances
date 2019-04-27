@@ -51,11 +51,11 @@ int H2K1ThrowSerie(int l, int n, int prev) {
 	return prev + 2;
 }
 
-//zlicza podstawe dla np
+//zlicza podstawe dla stanu nieparzystego
 inline float H1K1ArithmeticSeries1(int l) {
 	return ((1 + l / 2) / 2.0f) * (l - 1);
 }
-//zlicza podstawe serii dla np
+//zlicza podstawe serii dla stanu nieparzystego
 inline float H1K1ArithmeticSeries2 (int l, int s) {
 	return l * l * s;
 }
@@ -76,6 +76,10 @@ int H1ThrowSerie(int l) {
 //zlicza sume nadmiaru szeregu
 inline float H1ArithmeticSeries1(int l) {
 	return 2 * (2 * l * ((1 + l / 2) / 2.0f) * l / 2);
+}
+//zlicza korekte dla stanu parzystego
+inline float H0K0ArithmeticSeries(int l) {
+	return (2 * l + 1)*(l / 2);
 }
 
 void D2K0(int h, int l) {
@@ -112,7 +116,20 @@ void D2K0(int h, int l) {
 
 	}
 
-	if (h == 0) { std::cout << -1 << '\n'; }
+	if (h == 0) {
+
+		sum = 8 * ArithmeticSeries1(l / 2);
+
+		if (l % 2 == 0) {
+
+			sum -= H0K0ArithmeticSeries(l);
+
+		}
+
+		sum = Floor(sum / div);
+		std::cout << sum << std::endl;
+
+	}
 }
 
 void D2K1(int h, int l) {
