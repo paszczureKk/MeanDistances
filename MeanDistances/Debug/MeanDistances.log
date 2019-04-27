@@ -1,0 +1,5 @@
+﻿  Main.cpp
+c:\users\abc\source\repos\meandistances\meandistances\main.cpp(19): warning C4244: "return": konwersja z "int" do "float", możliwa utrata danych
+c:\users\abc\source\repos\meandistances\meandistances\main.cpp(110): warning C4244: "inicjowanie": konwersja z "float" do "int", możliwa utrata danych
+c:\users\abc\source\repos\meandistances\meandistances\main.cpp(123): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+  MeanDistances.vcxproj -> C:\Users\abc\source\repos\MeanDistances\Debug\MeanDistances.exe
