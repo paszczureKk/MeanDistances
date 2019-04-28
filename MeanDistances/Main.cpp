@@ -77,9 +77,26 @@ int H1ThrowSerie(int l) {
 inline float H1ArithmeticSeries1(int l) {
 	return 2 * (2 * l * ((1 + l / 2) / 2.0f) * l / 2);
 }
+
+//zlicza redukcje dla stanu parzystego
+inline float H0K1ArithmeticSeries2(int l) {
+	return l / 2 * l / 2 * ((l / 2) / 2.0f) * (l / 2 - 1);
+}
+//zlicza redukcje dla stanu nieparzystego
+inline float H0K1ArithmeticSeries3(int l) {
+	return ((l / 2) + 1) * (l / 2) * ((l / 2 + 1) / 2.0f) * (l / 2);
+}
 //zlicza korekte dla stanu parzystego
-inline float H0K0ArithmeticSeries(int l) {
-	return (2 * l + 1)*(l / 2);
+inline float H0ArithmeticSeries1(int l) {
+	return (2 * l + 1) * (l / 2);
+}
+//zlicza przyrost kolejnych przesuniêæ
+inline float H0ArithmeticSeries2(int l) {
+	return l * l * ((l / 2 + l) / 2.0f) * (l / 2 - 1);
+}
+//zlicza kolejne przesuniêcia
+int H0ArithmeticSeries3(int l) {
+	return H0ArithmeticSeries2(l) - l * (ArithmeticSeries1(l - 1) - ArithmeticSeries1(l / 2));
 }
 
 void D2K0(int h, int l) {
@@ -118,16 +135,7 @@ void D2K0(int h, int l) {
 
 	if (h == 0) {
 
-		sum = 8 * ArithmeticSeries1(l / 2);
 
-		if (l % 2 == 0) {
-
-			sum -= H0K0ArithmeticSeries(l);
-
-		}
-
-		sum = Floor(sum / div);
-		std::cout << sum << std::endl;
 
 	}
 }
@@ -187,9 +195,34 @@ void D2K1(int h, int l) {
 	}
 
 	if (h == 0) {
-		// if(l%2 == 1) { int sum = hZeroOdd(l)/l;   std::cout << sum/div << '\n'; }
-		// else         { int sum = hZeroEven(l)/l;  std::cout << sum/div << '\n'; }
-		std::cout << -1 << '\n';
+		
+		int base = 8 * ArithmeticSeries1(l / 2);
+
+
+		if (l % 2 == 1) {
+
+			sum = l * base;
+
+			base = H0ArithmeticSeries3(l) - H0K1ArithmeticSeries3(l) - ArithmeticSeries2(l / 2);
+			sum += 2 * base;
+
+			sum = Floor(sum / div / l);
+			std::cout << sum << std::endl;
+
+		}
+		else {
+
+			base -= H0ArithmeticSeries1(l);
+
+			sum = l / 2 * base;
+
+			sum += H0ArithmeticSeries3(l) - H0K1ArithmeticSeries2(l) - ArithmeticSeries2(l / 2 - 1);
+
+			sum = Floor(sum / div / (l / 2));
+			std::cout << sum << std::endl;
+
+		}
+
 	}
 	
 	
@@ -240,9 +273,18 @@ void D2K2(int h, int l) {
 	}
 
 	if (h == 0) {
-		// if(l%2 == 1) { int sum = (l/2) * (l/2 + 1) * (l + (2 * (l/2) + 1)/3); std::cout << sum/div << '\n'; }
-		// else         { int sum = (2 * l * l * l + l)/6;                       std::cout << sum/div << '\n'; }
-		std::cout << -1 << '\n';
+
+		sum = 8 * ArithmeticSeries1(l / 2);
+
+		if (l % 2 == 0) {
+
+			sum -= H0ArithmeticSeries1(l);
+
+		}
+
+		sum = Floor(sum / div);
+		std::cout << sum << std::endl;
+
 	}
 	
 }
