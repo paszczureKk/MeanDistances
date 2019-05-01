@@ -30,6 +30,15 @@ float ArithmeticSeries2(int l) {
 
 	return l2 * l2 / 4.0f + l2 * l / 2.0f + l2 / 4.0f;
 }
+//suma kolejnych liczb
+inline float ArithmeticSeries3(int l) {
+	return ((l + 1) / 2.0f) * l;
+}
+inline float ArithmeticSeries4(int l) {
+	return l*(l + 1)*(2 * l + 1)*(3 * l*l + 3 * l - 1) / 30.0f;
+}
+
+
 //zlicza podstawe serii
 inline float H2ArithmeticSeries2(int l) {
 	return 2 * ((l + 1) / 2.0f)*(l / 2);
@@ -86,6 +95,24 @@ inline float H0K1ArithmeticSeries2(int l) {
 inline float H0K1ArithmeticSeries3(int l) {
 	return ((l / 2) + 1) * (l / 2) * ((l / 2 + 1) / 2.0f) * (l / 2);
 }
+
+//zlicza pierwszy krok przesuniêæ dla stanu parzystego
+inline float H0K0ArithmeticSeries1(int l) {
+	return ((l / 2) / 2.0f)*(l / 2 - 1) * (l / 2 - 1) * ((3 * l - 2) / 2.0f);
+}
+//zlicza drugi krok przesuniêæ dla stanu parzystego
+inline float H0K0ArithmeticSeries2(int l) {
+	return (l / 2 - 1) * ((l*l*l) / 4.0f - (5 * (l*l) / 8.0f) + l / 4.0f);
+}
+//liczy wielokrotnoœæ kroku 4 dla stanu parzystego
+inline float H0K0ArithmeticSeries3(int l) {
+	return -5 * l + 9 / 2.0f;
+}
+//liczy wielokrotnoœæ kroku 5 dla stanu parzystego
+inline float H0K0ArithmeticSeries4(int l) {
+	return (9 / 4.0f) * l * l - (9 / 2.0f) * l + 3 / 2.0f;
+}
+
 //zlicza korekte dla stanu parzystego
 inline float H0ArithmeticSeries1(int l) {
 	return (2 * l + 1) * (l / 2);
@@ -135,7 +162,39 @@ void D2K0(int h, int l) {
 
 	if (h == 0) {
 
+		int base = 8 * ArithmeticSeries1(l / 2);
 
+
+		if (l % 2 == 1) {
+
+			/*sum = l * base;
+
+			base = H0ArithmeticSeries3(l) - H0K1ArithmeticSeries3(l) - ArithmeticSeries2(l / 2);
+			sum += 2 * base;
+
+			sum = Floor(sum / div / l);
+			std::cout << sum << std::endl;*/
+
+		}
+		else {
+
+			base -= H0ArithmeticSeries1(l);
+
+			sum = l / 2 * l / 2 * base;
+
+			base = (l * l * l / 2.0f) * ArithmeticSeries3(l / 2 - 1) - (l * l / 4.0f) * ArithmeticSeries1(l / 2 - 1) - 2 * l * ArithmeticSeries2(l / 2 - 1) + ArithmeticSeries4(l / 2 - 1);
+
+			sum += base;
+
+			base = H0K0ArithmeticSeries1(l) - H0K0ArithmeticSeries2(l) + 3 * ArithmeticSeries2(l / 2 - 1)
+				+ H0K0ArithmeticSeries3(l) * ArithmeticSeries1(l / 2 - 1) + H0K0ArithmeticSeries4(l) * ArithmeticSeries3(l / 2 - 1);
+
+			sum += base;
+
+			sum = Floor(sum / div / (l / 2) / (l / 2) );
+			std::cout << sum << std::endl;
+
+		}
 
 	}
 }
