@@ -1,5 +1,40 @@
 ﻿  Main.cpp
-c:\users\abc\source\repos\meandistances\meandistances\main.cpp(19): warning C4244: "return": konwersja z "int" do "float", możliwa utrata danych
-c:\users\abc\source\repos\meandistances\meandistances\main.cpp(110): warning C4244: "inicjowanie": konwersja z "float" do "int", możliwa utrata danych
-c:\users\abc\source\repos\meandistances\meandistances\main.cpp(123): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
-  MeanDistances.vcxproj -> C:\Users\abc\source\repos\MeanDistances\Debug\MeanDistances.exe
+d:\meandistances\meandistances\main.cpp(19): warning C4244: "return": konwersja z "__int64" do "long double", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(70): warning C4244: "return": konwersja z "__int64" do "long double", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(82): warning C4244: "return": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(108): warning C4244: "return": konwersja z "__int64" do "long double", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(112): warning C4244: "return": konwersja z "__int64" do "long double", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(116): warning C4244: "return": konwersja z "__int64" do "long double", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(142): warning C4244: "return": konwersja z "__int64" do "long double", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(150): warning C4244: "return": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(209): warning C4244: "inicjowanie": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(214): warning C4244: "=": konwersja z "float" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(216): warning C4244: "=": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(220): warning C4244: "=": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(229): warning C4244: "-=": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(233): warning C4244: "=": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(240): warning C4244: "=": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(244): warning C4244: "argument": konwersja z "__int64" do "long double", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(266): warning C4244: "inicjowanie": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(279): warning C4244: "argument": konwersja z "__int64" do "long double", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(290): warning C4244: "=": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(292): warning C4244: "argument": konwersja z "__int64" do "long double", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(300): warning C4244: "argument": konwersja z "__int64" do "long double", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(325): warning C4244: "inicjowanie": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(332): warning C4244: "=": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(335): warning C4244: "argument": konwersja z "__int64" do "long double", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(341): warning C4244: "-=": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(345): warning C4244: "+=": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(347): warning C4244: "argument": konwersja z "__int64" do "long double", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(371): warning C4244: "inicjowanie": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(375): warning C4244: "argument": konwersja z "__int64" do "long double", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(401): warning C4244: "inicjowanie": konwersja z "__int64" do "int", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(403): warning C4244: "argument": konwersja z "__int64" do "long double", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(403): warning C4244: "=": konwersja z "__int64" do "int", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(408): warning C4244: "inicjowanie": konwersja z "__int64" do "int", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(410): warning C4244: "argument": konwersja z "__int64" do "long double", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(410): warning C4244: "=": konwersja z "__int64" do "int", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(419): warning C4244: "=": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(423): warning C4244: "-=": konwersja z "long double" do "__int64", możliwa utrata danych
+d:\meandistances\meandistances\main.cpp(427): warning C4244: "argument": konwersja z "__int64" do "long double", możliwa utrata danych
+  MeanDistances.vcxproj -> D:\MeanDistances\Debug\MeanDistances.exe
